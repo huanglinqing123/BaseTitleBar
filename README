@@ -22,20 +22,20 @@ compile 'com.hlq:basetitlebar:1.0.1'
     
 属性较多，主要如下：
 
-属性名	                意义	            默认值
-lefttext	        左侧文字	 
-righttext	        右侧文字	 
-centertext	        中间文字	 
-lefttext_color	    左侧文字颜色	       白色
-righttext_color	    右侧文字颜色	       白色
-titlettext_color	中间文字颜色	       白色
-lefticon_src	    左侧图标	 
-righticon_src	    右侧图标	 
-lefttext_is_show	左侧是否显示文字	false
-righttext_is_show	右侧是否显示文字	false
-lefticon_is_show	左侧是否显示图片	false
-righticon_is_show	右侧是否显示图片	false
-titlebarback_color	titlebar背景颜色	蓝色
+属性名	                意义	                        默认值
+lefttext	          左侧文字	 
+righttext	          右侧文字	 
+centertext	          中间文字	 
+lefttext_color	      左侧文字颜色	               白色
+righttext_color	      右侧文字颜色	               白色
+titlettext_color	  中间文字颜色	               白色
+lefticon_src	      左侧图标	 
+righticon_src	      右侧图标	 
+lefttext_is_show	  左侧是否显示文字	             false
+righttext_is_show	  右侧是否显示文字	             false
+lefticon_is_show	  左侧是否显示图片	             false
+righticon_is_show	  右侧是否显示图片	             false
+titlebarback_color	  titlebar背景颜色	             蓝色
 lefttext、righttext为设置titlebar左右两边文字；
 
 lefttext_is_show/righttext_is_show为设置左右两边文字是否显示；
