@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BaseTitleBar">
+        <attr name="lefttext_color" format="color" />
+        <attr name="righttext_color" format="color" />
+        <attr name="titlettext_color" format="color" />
+        <attr name="titlebarback_color" format="color" />
+        <attr name="lefticon_src" format="reference" />
+        <attr name="righticon_src" format="reference" />
+        <attr name="lefttext_is_show" format="boolean" />
+        <attr name="righttext_is_show" format="boolean" />
+        <attr name="lefticon_is_show" format="boolean" />
+        <attr name="righticon_is_show" format="boolean" />
+        <attr name="leftweight" format="float" />
+        <attr name="rightweight" format="float" />
+        <attr name="centernweight" format="float" />
+        <attr name="lefttext" format="string" />
+        <attr name="righttext" format="string" />
+        <attr name="centertext" format="string" />
+    </declare-styleable>
+</resources>
