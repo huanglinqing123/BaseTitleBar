@@ -1,4 +1,11 @@
-自定义view
-Basetiltebar简介
-1.basetilebar是app顶部常用的状态栏，在该控件中，我们可以通过xml属性来设置中间的文字，
-左右两侧是显示icon或者text 以及对应的图标和文字及字体颜色，在java代码中可以设置左右两侧的监听事件
+##自定义view
+### Basetiltebar简介
+#### 1.basetilebar是app顶部常用的状态栏，在该控件中，我们可以通过xml属性来设置中间的文字，
+#### 左右两侧是显示icon或者text 以及对应的图标和文字及字体颜色，在java代码中可以设置左右两侧的监听事件
+#### 在xml属性中设置 可以设置左侧文字、图标是否显示等，一般左右侧设置对称或同侧文字图标不同时显示，举例如下：
+####  app:lefttext_is_show="true"
+####  app:righttext_is_show="true"
+####  app:centertext = "测试"
+####  app:lefttext="返回"
+####  app:righttext="分享"
+      
