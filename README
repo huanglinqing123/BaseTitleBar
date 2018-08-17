@@ -19,6 +19,7 @@ compile 'com.hlq:basetitlebar:1.0.1'
     app:righttext="分享"
     android:layout_width="match_parent"
     android:layout_height="50dp" />
+    
 属性较多，主要如下：
 
 属性名	                意义	            默认值
