@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -64,12 +65,26 @@ public class BaseTitleBar extends LinearLayout {
         lefttext = mTypeArrar.getString(R.styleable.BaseTitleBar_lefttext);
         righttext = mTypeArrar.getString(R.styleable.BaseTitleBar_righttext);
         centertext = mTypeArrar.getString(R.styleable.BaseTitleBar_centertext);
-        back_color = mTypeArrar.getColor(R.styleable.BaseTitleBar_titlebarback_color,Color.parseColor("#00BBF"));
+        back_color = mTypeArrar.getColor(R.styleable.BaseTitleBar_titlebarback_color,Color.parseColor("#00BBFF"));
         init(context);
     }
 
     public BaseTitleBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray mTypeArrar = context.obtainStyledAttributes(attrs, R.styleable.BaseTitleBar);
+        lefttext_color = mTypeArrar.getColor(R.styleable.BaseTitleBar_lefttext_color, Color.WHITE);
+        righttext_color = mTypeArrar.getColor(R.styleable.BaseTitleBar_righttext_color, Color.WHITE);
+        lefttext_isshow = mTypeArrar.getBoolean(R.styleable.BaseTitleBar_lefttext_is_show, false);
+        righttext_isshow = mTypeArrar.getBoolean(R.styleable.BaseTitleBar_righttext_is_show, false);
+        lefticon_isshow = mTypeArrar.getBoolean(R.styleable.BaseTitleBar_lefticon_is_show, false);
+        righticon_isshow = mTypeArrar.getBoolean(R.styleable.BaseTitleBar_righticon_is_show, false);
+        lefticon = mTypeArrar.getResourceId(R.styleable.BaseTitleBar_lefticon_src, 0);
+        righticon = mTypeArrar.getResourceId(R.styleable.BaseTitleBar_righticon_src, 0);
+        lefttext = mTypeArrar.getString(R.styleable.BaseTitleBar_lefttext);
+        righttext = mTypeArrar.getString(R.styleable.BaseTitleBar_righttext);
+        centertext = mTypeArrar.getString(R.styleable.BaseTitleBar_centertext);
+        back_color = mTypeArrar.getColor(R.styleable.BaseTitleBar_titlebarback_color,Color.parseColor("#00BBFF"));
+        mTypeArrar.recycle();
         init(context);
     }
 
@@ -77,29 +92,34 @@ public class BaseTitleBar extends LinearLayout {
      * 初始化布局
      */
     public void init(Context context) {
-        LayoutInflater.from(context).inflate(R.layout.activiti_basetitle,null);
-        leftTextview = findViewById(R.id.lefttext);
-        centerTextView = findViewById(R.id.ceterntext);
-        rightTextView = findViewById(R.id.righttext);
-        leftimage = findViewById(R.id.lefticon);
-        rightimage = findViewById(R.id.right_icon);
-        titlebarlinear = findViewById(R.id.titlebarlinear);
+        View v =LayoutInflater.from(context).inflate(R.layout.activiti_basetitle,this,true);
+        leftTextview = v.findViewById(R.id.lefttext);
+        centerTextView = v.findViewById(R.id.ceterntext);
+        rightTextView = v.findViewById(R.id.righttext);
+        leftimage = v.findViewById(R.id.lefticon);
+        rightimage = v.findViewById(R.id.right_icon);
+        titlebarlinear = v.findViewById(R.id.titlebarlinear);
+
 
         /**
          * 设置属性
          */
         if (lefttext_isshow){
+            leftTextview.setVisibility(View.VISIBLE);
             leftTextview.setText(lefttext);
             leftTextview.setTextColor(lefttext_color);
         }
         if (righttext_isshow){
+            rightTextView.setVisibility(View.VISIBLE);
             rightTextView.setText(righttext);
             rightTextView.setTextColor(righttext_color);
         }
         if (lefticon_isshow){
+            leftimage.setVisibility(View.VISIBLE);
             leftimage.setImageDrawable(getResources().getDrawable(lefticon));
         }
         if (righticon_isshow){
+            rightimage.setVisibility(View.VISIBLE);
             rightimage.setImageDrawable(getResources().getDrawable(righticon));
         }
         titlebarlinear.setBackgroundColor(back_color);
